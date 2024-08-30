@@ -93,4 +93,7 @@ def logout(request):
     request.session.flush()  # Ensure session is cleared
     return JsonResponse({'message': 'Successfully logged out.'})
 
+def say_hi(request):
+    return JsonResponse({"hello":"hi"})
+
 
