@@ -73,7 +73,7 @@ def rsvp_for_event(request, event_id):
         
         invitation, created = Invitation.objects.get_or_create(event=event, user=request.user)
         
-        if created or invitation.status is "Pending":  # New or no previous response
+        if created or invitation.status == "Pending":  # New or no previous response
             invitation.status = status
             invitation.save()
             
