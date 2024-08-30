@@ -16,10 +16,12 @@ Including another URLconf
 """
 from django.urls import path, include
 from django.urls import path
+from gAuth.views import google_login
 
 urlpatterns = [
     path('api/', include('gAuth.urls')),  # Include aAuth URLs
     path('api/', include('places.urls')), # Include places URLs
     path('accounts/', include('django.contrib.auth.urls')),
     path('api/', include('events.urls')),
+    path('', google_login, name='login'),  
 ]
