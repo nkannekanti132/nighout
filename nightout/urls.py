@@ -23,5 +23,5 @@ urlpatterns = [
     path('api/', include('places.urls')), # Include places URLs
     path('accounts/', include('django.contrib.auth.urls')),
     path('api/', include('events.urls')),
-    path('', google_login, name='login'),  
+    path('/', google_login, name='login'),  
 ]
